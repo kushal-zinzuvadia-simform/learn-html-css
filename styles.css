@@ -1,1 +1,59 @@
-New styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #111;
+  color: white;
+}
+
+.logo {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.header input {
+  flex: 1;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 180px;
+  background: #222;
+  color: white;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.sidebar p {
+  padding: 8px 0;
+}
+
+.content {
+  flex: 1;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.video {
+  background: #f1f1f1;
+  padding: 10px;
+}
+
+.thumb {
+  height: 120px;
+  background: #bbb;
+  margin-bottom: 8px;
+}
