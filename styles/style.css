@@ -1,0 +1,96 @@
+:root {
+  --border-color: #ccc;
+  --blue-text: #0a65a4;
+  --body-text-color: #172b4d;
+  --link-color: #000000;
+
+  --button-primary-bg: #007bff;
+  --button-text-color: #ffffff;
+
+  --muted-text-color: #555;
+
+  --selected-bg: #B6D1F7;
+  --dropdown-bg: #e7f0fd;
+
+  --beta-bg: #f0d8f0;
+  --beta-text: #520dc2;
+
+  /* Main content section  */
+  --board-bg: #F7F8F9;
+  --card-bg: #ffffff;
+
+  --shadow-light: 0 1px 2px rgba(9, 30, 66, 0.25);
+  --shadow-hover: 0 6px 14px rgba(0, 0, 0, 0.15);
+
+  --avatar-border: #ffffff;
+  --avatar-more-bg: lightgray;
+  --avatar-more-text: #000000;
+
+  --gray-bg: #F0F1F4;
+
+  --task-id-color: #586272;
+
+  --status-red: #E5493A;
+  --status-green: #63BA3C;
+  --status-blue: #4BAEE8;
+
+  --feedback-bg: #F5CD47;
+  --feedback-text: #000000;
+  --billing-bg: #0C66E4;
+  --accounts-bg: #1F845A;
+  --forms-bg: #6E5DC6;
+
+  --flagged-bg: #FFF7D6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--body-text-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/*  Main Page Layout  */
+
+.container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+aside {
+  width: 250px;
+  overflow-y: auto;
+  padding: 5px;
+  border-right: 1px solid var(--border-color);
+}
+
+main {
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
