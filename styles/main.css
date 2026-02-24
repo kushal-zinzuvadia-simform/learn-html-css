@@ -3,6 +3,16 @@
 .main-title {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    /* allows wrapping */
+}
+
+.board-options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .board-title {
@@ -11,43 +21,39 @@
     gap: 4px;
 }
 
-.board-options {
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
-}
-
 /* Toolbar Section */
 
 .main-toolbar {
     display: flex;
     justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .main-tools {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 /* Board Layout */
 
 .main-board {
-    height: 100%;
-    display: flex;
-    gap: 12px;
-    justify-content: space-between;
+    display: grid;
+    gap: 16px;
+    /* grid-template-columns: repeat(4, max-content); */
+    grid-template-columns: max-content;
+    justify-content: start;
 }
 
 .board-category {
-    width: 100%;
     display: flex;
-    flex: 1;
     flex-direction: column;
     gap: 8px;
-    border-radius: 6px;
     background-color: var(--board-bg);
-    padding: 4px;
+    padding: 8px;
+    border-radius: 6px;
 }
 
 /* Board Category Header */
@@ -65,6 +71,7 @@
     flex-direction: column;
     gap: 6px;
     padding: 0 2px;
+
 }
 
 /* Task Card */
@@ -72,8 +79,8 @@
 .task-card {
     background: none;
     border: none;
-    padding: 0;
-    height: 120px;
+    width: clamp(260px, 25vw, 360px);
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -93,11 +100,14 @@
 .task-name {
     text-align: left;
     font-size: 16px;
+    word-break: break-word;
 }
 
 .task-info {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .info {
@@ -143,20 +153,27 @@
 
 /* Search Input Inside Task */
 
-.search-task-icon {
+.search-form {
     position: relative;
-    width: 16px;
-    height: 16px;
-    top: 3px;
-    right: 28px;
+    display: inline-block;
 }
 
 .search-task {
     height: 32px;
-    width: 120px;
-    padding: 6px;
+    width: clamp(100px, 15vw, 180px);
+    padding: 6px 30px 6px 8px;
     border: 1px solid var(--border-color);
     border-radius: 3px;
+}
+
+.search-task-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 /* Dropdown Button */
@@ -262,23 +279,14 @@
 
 /* Responsiveness */
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
     .main-board {
-        flex-wrap: wrap;
-    }
-
-    .board-category {
-        flex: 0 0 48%;
-        /* two columns */
+        grid-template-columns: repeat(2, max-content);
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1440px) {
     .main-board {
-        flex-wrap: wrap;
-    }
-
-    .board-category {
-        flex: 1 1 100%;
+        grid-template-columns: repeat(4, max-content);
     }
 }

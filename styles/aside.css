@@ -29,19 +29,24 @@
     padding-left: 15px;
 }
 
-.tool-item {
+.tool-item,
+.tool-item-selected {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 8px 15px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
     border-radius: 6px;
+}
+
+.tool-item-selected {
+    background-color: var(--selected-bg);
+    color: var(--blue-text);
+    font-weight: 600;
 }
 
 .tool-item:hover {
     background-color: var(--selected-bg);
-    padding: 8px 16px;
 }
 
 .tool-icon {
@@ -50,18 +55,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.tool-item-selected {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 15px;
-    cursor: pointer;
-    background-color: var(--selected-bg);
-    color: var(--blue-text);
-    border-radius: 6px;
-    font-weight: 600;
 }
 
 /*  Board Dropdown Section  */
@@ -104,10 +97,6 @@
     height: 14px;
 }
 
-.board-info div {
-    color: var(--blue-text);
-}
-
 /*  Sidebar Footer Section  */
 
 .disclaimer {
@@ -136,4 +125,36 @@
     padding: 2px 4px;
     border-radius: 3px;
     margin-left: 5px;
+}
+
+/* Responsiveness */
+
+@media (max-width: 1200px) {
+    aside {
+        width: 220px;
+    }
+
+    .project-name {
+        font-size: 14px;
+    }
+
+    .tool-item,
+    .tool-item-selected {
+        padding: 7px 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    aside {
+        width: 200px;
+    }
+
+    .tool-section {
+        font-size: 11px;
+    }
+
+    .tool-icon {
+        width: 18px;
+        height: 18px;
+    }
 }

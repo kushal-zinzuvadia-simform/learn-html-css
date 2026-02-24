@@ -1,14 +1,15 @@
 .header-left,
 .header-right {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .brand {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
   padding-left: 10px;
@@ -36,12 +37,17 @@
   font-weight: 600;
 }
 
+.action-bar {
+  min-width: 0;
+  flex: 1;
+}
+
 .action-bar ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
+  gap: 12px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -49,6 +55,14 @@
   display: flex;
   gap: 4px;
   align-items: center;
+}
+
+.nav-list {
+  width: fit-content;
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 a {
@@ -66,24 +80,29 @@ a {
   color: var(--button-text-color);
   cursor: pointer;
   border-radius: 3px;
+  flex-shrink: 0;
 }
 
 .search-bar {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 5px;
+  flex: 1;
+  max-width: 240px;
 }
 
 .search-input {
-  padding: 5px;
+  width: 100%;
+  padding: 6px 8px 6px 28px;
   border: 1px solid var(--border-color);
   border-radius: 3px;
-  padding-left: 30px; /* Add padding to the left for the search icon */
+  transition: width 0.2s ease;
 }
 
 .search-icon {
-  position: relative;
-  left: 27px; /* Adjust the position of the search icon */
+  position: absolute;
+  left: 8px;
+  /* Adjust the position of the search icon */
   width: 15px;
   height: 15px;
 }
@@ -91,7 +110,7 @@ a {
 .icons-container {
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   padding-right: 10px;
 }
@@ -106,4 +125,87 @@ a {
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
+}
+
+/*  Responsiveness  */
+
+@media (max-width: 1200px) {
+
+  .project-title {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .search-input {
+    width: 160px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+
+  .action-bar {
+    overflow-x: auto;
+  }
+
+  .action-bar ul {
+    gap: 6px;
+  }
+
+  .search-bar {
+    max-width: 140px;
+  }
+
+  .logo {
+    padding-left: 0;
+  }
+
+  .icons-container {
+    gap: 12px;
+  }
+
+  .create-button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .action-bar {
+    display: none;
+  }
+
+  .project-title {
+    display: none;
+  }
+
+  .search-bar {
+    max-width: 120px;
+  }
+
+  .icons-container {
+    gap: 8px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .header {
+    padding: 8px 10px;
+  }
+
+  .search-bar {
+    display: none;
+  }
+
+  .icons-container {
+    gap: 6px;
+  }
 }
